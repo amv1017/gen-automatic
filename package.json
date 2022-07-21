@@ -4,20 +4,19 @@
   "license": "MIT",
   "scripts": {
     "dev": "wmr --port=3000 --host",
-    "build": "wmr build",
-    "serve": "wmr serve --http2 --port=8080",
-    "deploy": "node deploy.js"
+    "build": "wmr build && yarn backend",
+    "backend": "node db.js && json-server --watch db.json --port=8080"
   },
   "alias": {
     "react": "preact/compat",
     "react-dom": "preact/compat"
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0",
     "wmr": "^3.7.2"
   },
   "dependencies": {
-    "fs-extra": "^10.1.0",
+    "json-server": "^0.17.0",
+    "nanoid": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.53.0"
